@@ -1,0 +1,177 @@
+--
+--
+-- USANDO LA BASE DE DATOS VETERINARIA
+--
+USE BDVETERINARIA
+GO
+--
+--
+-- INGRESANDO REGISTROS A LAS TABLAS
+--
+-- TABLA TIPO DE DOCUMENTO
+insert into tb_tipoDocumento values
+('TPD01','DNI'),
+('TPD02','CARNET DE EXTRANJERIA'),
+('TPD03','PASAPORTE'),
+('TPD04','PARTIDA DE NACIMIENTO-IDENTIDAD'),
+('TPD05','RUC')
+go
+--
+select * from tb_tipoDocumento
+go
+--
+--
+-- TABLA TIPO DE DOCUMENTO
+insert into tb_tipoMascota values
+('TPM01','PERRO'),
+('TPM02','GATOS'),
+('TPM03','HAMSTERS'),
+('TPM04','PECES'),
+('TPM05','CONEJO'),
+('TPM06','TORTUGA')
+go
+--
+select * from tb_tipoMascota
+go
+--
+--
+-- TABLA PRODUCTO
+insert into tb_producto values
+('TP001','BOLSA DOG CHOW ADULTO RAZAS MEDIANAS Y GRANDES 15KG',165.00,130.00,300),
+('TP002','BOLSA DOG CHOW CACHORROS RAZAS MEDIANAS Y GRANDES 15kg/21kg',165.00,130.00,300),
+('TP003','BOLSA CAT SHOW ADULTO DELIMIX 1KG',29.00,26.80,210),
+('TP004','HILLS ADULTO CORDERO 15KG',480.00,445.00,330),
+('TP005','SERESTO MAYOR DE 8KG',279.00,210.00,250),
+('TP006','PRO PLAN CACHORRO POLLO 15KG',393.00,365.00,410)
+go
+--
+select * from tb_producto
+go
+--
+--
+-- TABLA PROVEEDOR
+insert into tb_proveedor values
+('PV001','JORGE','MENDOZA PEREZ','2589634','987852654','PASAJE AZULES 150','JORGE@GMAIL.COM','74488914','TPD01','ACTIVO'),
+('PV002','RICARDO','SUAREZ RODRIGUEZ','8527419','965851357','PASAJE VERDES 450','RICARDO@GMAIL.COM','95175385264','TPD05','ACTIVO'),
+('PV003','FABRIZIO','FLORES FLORES','9637415','987562843','PASAJE NIEVES 98','FABRIZIO@GMAIL.COM','96385274183','TPD05','ACTIVO'),
+('PV004','GABRIEL','PEREZ SANCHEZ','1234569','956324851','PASAJE OLIVARES 45','GABRIEL@GMAIL.COM','95175385649','TPD05','ACTIVO'),
+('PV005','PAOLO','CRUZ PAREDEZ','6528543','915842759','PASAJE VILLA 75','PAOLO@GMAIL.COM','85599780','TPD01','ACTIVO')
+go
+--
+select * from tb_proveedor
+go
+--
+--
+-- TABLA CLIENTE
+insert into tb_cliente values
+('CL001','JEFERSON','VICTORIO ALVEZ','9856324','987523456','PASAJE VERDES 165','JEFERSON@GMAIL.COM','76655925','TPD01','ACTIVO'),
+('CL002','SEBASTIAN','PAREDEZ GOMEZ','8415267','951426854','PASAJE VERDES 780','SEBASTIAN@GMAIL.COM','84455632','TPD01','ACTIVO'),
+('CL003','MARCO','GOMEZ GUTIERRES','9514267','951753654','PASAJE AZULES 25','MARCO@GMAIL.COM','95588412','TPD01','ACTIVO'),
+('CL004','JENIFER','RODAS RODAS','9528417','854123654','PASAJE OLIVARES 95','JENIFER@GMAIL.COM','94433521','TPD01','ACTIVO'),
+('CL005','ARIANA','SALVATIERRA DE LA CRUZ','6325174','987456329','PASAJE POLAR 36','ARIANA@GMAIL.COM','96258431297','TPD05','ACTIVO')
+go
+--
+select * from tb_cliente
+go
+--
+--
+-- TABLA MASCOTA
+insert into tb_mascota values
+('MC001','CL001','COPITO','2022-12-01','BASENJI','MASCOTA DE CASA','TPM01','ACTIVO'),
+('MC002','CL002','MATI','2020-10-05','BASENJI','MASCOTA DE VIGILANCIA','TPM01','ACTIVO'),
+('MC003','CL003','DIDI','2021-11-22','AZUL RUSO','MASCOTA DE CASA','TPM02','ACTIVO')
+go
+--
+select * from tb_mascota
+go
+--
+--
+-- TABLA VACUNACION
+insert into tb_vacunacion values
+('VCM01','MC001','2023-02-20','VACUNA CONTRA EL DISTEMPER','2023-02-20')
+go
+--
+select * from tb_vacunacion
+go
+--
+--
+-- TABLA CONSULTA
+insert into tb_consulta values
+('CM001','MC001','2023-02-15','PERDIDA DE APETITO','PASTILLAS X ADEMAS DE REPOSO')
+go
+--
+select * from tb_consulta
+go
+--
+--
+-- TABLA RESERVA
+insert into tb_reserva values
+('RV001','CL001','MC001','2023-02-25 7:00:00','REVISION GENERAL','ACTIVO')
+go
+--
+select * from tb_reserva
+go
+--
+--
+-- TABLA COMPRA
+insert into tb_compra values
+('CP001','PV002','2023-02-20')
+go
+--
+select * from tb_compra
+select * from tb_proveedor
+go
+--
+--
+-- TABLA COMPRA DETALLE
+insert into tb_compraDetalle values
+('CD001','TP001','CP001','SE LLEVO 2 BOLSAS',2,165.00)
+go
+--
+select * from tb_compraDetalle
+go
+--
+--
+-- TABLA VENTA
+insert into tb_venta values
+('VT001','CL001','2023-02-20')
+go
+--
+select * from tb_venta
+select * from tb_cliente
+go
+--
+--
+-- TABLA VENTA DETALLE
+insert into tb_ventaDetalle values
+('VD001','VT001','TP001','SE LLEVO 2 BOLSAS',2,165.00)
+go
+--
+select * from tb_ventaDetalle
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
